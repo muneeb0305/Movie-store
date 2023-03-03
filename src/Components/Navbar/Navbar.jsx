@@ -4,12 +4,11 @@ import { Link } from 'react-router-dom';
 
 export default function Navbar() {
     const [open, setOpen] = React.useState(false);
-  
     return (
       <>
-        <div className="relative bg-white">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6">
-            <div className="flex justify-between items-center border-b-2 border-gray-100 py-6 md:justify-start md:space-x-10">
+        <div className="relative bg-black">
+          <div className="px-4 sm:px-6">
+            <div className="flex justify-between items-center py-6 md:justify-start md:space-x-10">
               <div className="flex justify-start lg:w-0 lg:flex-1">
                 <a href="/">
                   <span className="sr-only">Workflow</span>
@@ -45,18 +44,16 @@ export default function Navbar() {
                   </svg>
                 </button>
               </div>
-              <nav className="hidden md:flex space-x-10">
-                
-  
+              <nav className="hidden md:flex space-x-10">  
                 <Link
                   to="/"
-                  className="text-base font-medium text-gray-500 hover:text-gray-900"
+                  className="text-base font-medium text-gray-300 hover:text-blue-900"
                 >
                   Movies
                 </Link>
                 <Link
                   to="/AddMovie"
-                  className="text-base font-medium text-gray-500 hover:text-gray-900"
+                  className="text-base font-medium text-gray-300 hover:text-blue-900"
                 >
                   Add Movie
                 </Link>
