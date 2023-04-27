@@ -1,14 +1,23 @@
-import React, { useState } from 'react'
+import React from 'react'
 import MovieContext from './MovieContext'
+import { useReducer } from 'react'
 
 function MovieState(props) {
-    const [Data, setData] = useState([])
-    const AddMovies = (movieName, movieDesc) => {
-        setData([...Data, { name: movieName, desc: movieDesc }]);
-      };
-    console.log(Data)
+    const initialState = { name: "", desc: "", movieList: [] }
+    const reducer = (state, action) => {
+        switch (action.type) {
+            case "ADDMOVIE":
+                return { ...state, movieList: [...state.movieList, action.formData] }
+            case "UPDATEFIELD":
+                return {...state, [action.formField]: action.fieldValue}
+            default:
+                throw new Error("Invalid Action Case")
+        }
+    }
+    const [state, dispatch] = useReducer(reducer, initialState)
+    console.log(state)
     return (
-        <MovieContext.Provider value={{ Data, AddMovies }}>
+        <MovieContext.Provider value={{ state, dispatch }}>
             {props.children}
         </MovieContext.Provider>
     )

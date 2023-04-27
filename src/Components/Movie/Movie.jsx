@@ -2,14 +2,14 @@ import React, { useContext } from 'react'
 import MovieContext from '../Context/MovieContext'
 import MoviePic from '../../Assets/Movie.jpg'
 export default function Movie() {
-    const { Data } = useContext(MovieContext)
+    const { state } = useContext(MovieContext)
     return (
         <div className='mx-44 mt-5'>
             <div className='flex justify-center my-5'>
                 <h1 className='text-4xl font-medium font-serif'>Movie List</h1>
             </div>
             <div className="grid grid-cols-3 gap-5">
-                {Data.map((Data, index) => {
+                {state.movieList.map((Data, index) => {
                     return (
                         <div className="bg-white p-6 rounded-lg shadow-lg" key={index}>
                             <img src={MoviePic} alt="Movie" />
