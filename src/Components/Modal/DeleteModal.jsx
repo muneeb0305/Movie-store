@@ -4,12 +4,13 @@ import { DELETEMOVIE } from '../../Store/Actions';
 
 export default function DeleteModal({ ID }) {
   const dispatch = useDispatch()
+  
   const [isOpen, setIsOpen] = useState(false);
   const openModal = () => setIsOpen(true);
   const closeModal = () => setIsOpen(false);
 
   const handleDelete = (id) => {
-    console.log(id)
+    //Delete Movie
     dispatch(DELETEMOVIE(id))
     closeModal()
   }

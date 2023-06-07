@@ -10,3 +10,9 @@ export const DELETEMOVIE = (id) => {
         payload: id
     }
 }
+export const UPDATEMOVIE = (id) => {
+    return {
+        type: 'UPDATE',
+        payload: id
+    }
+}
