@@ -107,18 +107,18 @@ export default function Navbar() {
               </div>
               <div className="py-6 px-5 space-y-6">
                 <div className="grid grid-cols-2 gap-y-4 gap-x-8">
-                  <a
-                    href="/"
-                    className="text-base font-medium text-gray-900 hover:text-gray-700"
-                  >
-                    Pricing
-                  </a>
-                  <a
-                    href="/"
-                    className="text-base font-medium text-gray-900 hover:text-gray-700"
-                  >
-                    Docs
-                  </a>
+                <Link
+                  to="/"
+                  className="text-base font-medium text-gray-900 hover:text-blue-900"
+                >
+                  Movies
+                </Link>
+                <Link
+                  to="/AddMovie"
+                  className="text-base font-medium text-gray-900 hover:text-blue-900"
+                >
+                  Add Movie
+                </Link>
                 </div>
               </div>
             </div>
